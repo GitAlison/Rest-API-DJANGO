@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+<div class="row">
+    <div class="col-sm-12">
+            {%csrf_token%}
+            {{form.cliente.label_tag}}
+            {{form.cliente}}
+            {{form.data.label_tag}}
+            {{form.data}}
+    </div>
+</div>
+    <hr>
+<div class="row">
+    <div class="col-sm-4">
+    <h4>Gerais</h4>
+     {{form.altura.label_tag}}
+     {{form.altura}}
+     {{form.peso.label_tag}}
+     {{form.peso}}
+     {{form.peitoral.label_tag}}
+     {{form.peitoral}}
+     {{form.torax.label_tag}}
+     {{form.torax}}
+     {{form.cintura.label_tag}}
+     {{form.cintura}}
+     {{form.quadril.label_tag}}
+     {{form.quadril}}
+    </div>
+    <div class="col-sm-4">
+            <h4>Membros Esquerdos</h4>
+        {{form.biseps_esq.label_tag}}
+        {{form.biseps_esq}}
+        {{form.antebraco_esq.label_tag}}
+        {{form.antebraco_esq}}
+        {{form.coxa_esq.label_tag}}
+        {{form.coxa_esq}}
+        {{form.panturrilha_esq.label_tag}}
+        {{form.panturrilha_esq}}
+    </div>
+    <div class="col-sm-4">
+        <h4>Membros Direitos</h4>
+        {{form.biseps_dir.label_tag}}
+        {{form.biseps_dir}}
+        {{form.antebraco_dir.label_tag}}
+        {{form.antebraco_dir}}
+        {{form.coxa_dir.label_tag}}
+        {{form.coxa_dir}}
+        {{form.panturrilha_dir.label_tag}}
+        {{form.panturrilha_dir}}
+        <br>
+        <button class="container-fluid btn btn-outline-success large" type="submit" >Salvar</button>
+    </div>
+
+</div>
+
+</form>
+<hr>
+<p>Footer</p>
+{% endblock content %}

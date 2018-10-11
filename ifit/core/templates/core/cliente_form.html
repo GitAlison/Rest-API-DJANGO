@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card border-dark p-2">
+
+    <h4 class="card-title">Registro de cliente</h4>
+    <p class="card-text">
+
+      <form action="" method="post" >
+        {% csrf_token %}
+        <div id="cliente">
+          <ul>
+            <li><a href="#geral">Dados Pessoais</a></li>
+            <li><a href="#endereco">Endereço</a></li>
+          </ul>
+          <div id="geral">
+            <h4>Dados Pessoais</h4>
+            {{form.nome.label_tag}}
+            {{form.nome}} <br>
+            {{form.cpf.label_tag}}
+            {{form.cpf}} <br>
+            {{form.rg.label_tag}}
+            {{form.rg}} <br>
+            {{form.data_nascimento.label_tag}}
+            {{form.data_nascimento}}
+          </div>
+          <div id="endereco">
+            <h4>Endereço</h4>
+            {{form.logradouro.label_tag}}
+            {{form.logradouro}}<br>
+            {{form.numero.label_tag}}
+            {{form.numero}}<br>
+            {{form.cidade.label_tag}}
+            {{form.cidade}}<br>
+            {{form.uf.label_tag}}
+            {{form.uf}}
+
+
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark">Salvar</button>
+
+      </form>
+      </p>
+
+  
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+
+$('#cliente').tabs();
+</script>
+
+{% endblock script %}

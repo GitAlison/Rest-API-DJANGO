@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{% block content %}
+
+
+<div class="card">
+    <div class="card-header">
+        Lista de Treinos
+        <a class="float-right ui-widget ui-button ui-corner-all " href="{% url 'core:treino-create' %}">Adicionar</a>
+    </div>
+    <div class="card-body">
+        <table class="table" >
+            <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Data</th>
+                    <th></th>
+                </tr>
+
+            </thead>
+            <tbody>
+            {% for obj in treino_list %}
+                <tr>
+
+                    <td>{{obj.id}}</td>
+                    <td>{{obj.cliente}}</td>
+                    <td>{{obj.data|date:'d/m/Y'}}</td>
+                    <td><a href="{% url 'core:treino-update' obj.id %}"><i class="fa fa-edit" aria-hidden="true"></i> </a>  </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+{% endblock content %}

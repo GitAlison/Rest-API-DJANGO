@@ -166,7 +166,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-try:
-    from ifit.local_settings import *
-except ImportError:
-    pass
+# try:
+#     from ifit.local_settings import *
+# except ImportError:
+#     pass
